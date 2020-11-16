@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: ;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    width: 1000px;
+    height: 80vh;
+    background-color: rgb(228, 204, 204);
+    margin: 0 auto;
+    margin-top: 7rem;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 1rem;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.card{
+    perspective: 150rem;
+    margin: 5px;
+    position: relative;
+}
+
+.card__side{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(#000, .15);
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    backface-visibility: hidden;
+    transition: all .5S ease-in;
+}
+
+.card__side--front{
+    background-color: rgb(122, 59, 59);
+}
+
+.card__side--back{
+    background-color: rgb(175, 124, 124);
+}
+
+.card__side--back--rotate{
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back{
+    transform: rotateY(0);
+}
+
+.card:hover .card__side--front{
+    transform: rotateY(180deg);
+}
+
+.card-img{
+    height: 220px;
+}
